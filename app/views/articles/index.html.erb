@@ -1,19 +1,26 @@
-<h1>Listing articles</h1>
+<div class="container border bg-light text-center">
+  <h1>Listing articles</h1>
+  <div class="row">
+    <div class="col-1 align-self-center"></div>
+    <table class="bg-secondary border col-10">
+      <tr>
+        <th class="col-3">Title</th>
+        <th class="col-7">Text</th>
+        <th></th>
+      </tr>
+
+      <% @articles.each do |article| %>
+        <tr class="text_center">
+          <td class="text_center"><%= article.title %></td>
+          <td class="text_center"><%= article.text %></td>
+          <td><%= link_to 'Show', article_path(article) %></td>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <div class="col-1 align-self-center"></div>
+  </div>
 
 <%= link_to 'New article', new_article_path %>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    </tr>
-  <% end %>
-</table>
+</div>

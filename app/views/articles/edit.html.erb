@@ -16,20 +16,25 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+  <div class="contaner bg-light text-left pt-4 pl-4 pr-4 border">
+    <div class="row">
+      <div class="form-group">
+        <p class="col-12">
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+        </p>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+        <p class="col-12">
+          <%= form.label :text %><br>
+          <%= form.text_area :text %>
+        </p>
 
-  <p>
-    <%= form.submit %>
-  </p>
-
+        <p class="col-12">
+          <%= form.submit %>
+        </p>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <%= link_to 'Back', articles_path %>
